@@ -126,6 +126,7 @@ public class MoCEntities
     return entityEntry;
   }
 
+  // Registry names (and entity NBT keys) are saved in worlds: don't rename them without a migration.
   private static void registerEntity(Class<? extends Entity> entityClass, String entityName) {
     ResourceLocation resourceLocation = new ResourceLocation("mocreatures:" + entityName.toLowerCase());
     EntityRegistry.registerModEntity(resourceLocation, entityClass, resourceLocation.toString(), MoCEntityID, MoCreatures.instance, 80, 1, true);
